@@ -5,16 +5,19 @@ pipeline {
         stage('Project Checkout'){
             steps{
                  git 'https://github.com/ganny26/substack.git'
+                 echo 'PROJECT CHECKOUT SUCCESSFUL'
             }
         }
         stage('Install dependencies'){
             steps{
                 sh 'npm install'
+                echo 'PROJECT DEPENDENCIES INSTALL SUCCESSFUL'
             }
         }
         stage('Test project'){
             steps{
                 sh 'npm test'
+                echo 'CODE TESTING SUCCESSFUL'
             }
         } 
     }
