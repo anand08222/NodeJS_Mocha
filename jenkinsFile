@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    tools {nodejs "node"}
+    stages{
+        stage('Project Checkout'){
+            steps{
+                 git 'https://github.com/ganny26/substack.git'
+            }
+        }
+        stage('Install dependencies'){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage('Test project'){
+            steps{
+                sh 'npm test'
+            }
+        } 
+    }
+}
